@@ -47,8 +47,27 @@ Color.blueIntensity = function(rgb){
 
 //brightness
 Color.brightness = function(rgb){
-  var bright = (rgb[0]+rgb[1]+rgb[2])/3;
+  var bright = (Color.redIntensity(rgb)+Color.greenIntensity(rgb)+Color.blueIntensity(rgb))/3;
   return bright;
-}
+};
 
 //complement
+Color.complement = function(rgb){
+  var comp = [];
+  for (var c=0; c<3; c++){
+    comp[c] = 255 - rgb[c];
+  }
+  return comp;
+};
+
+//greyScale
+Color.greyScale = function(rgb){
+  var grey = [];
+  var avg = (rgb[0]+rgb[1]+rgb[2])/3;
+  
+}
+
+//tint, tone, and shades
+Color.tint = function(rgb){
+
+}
